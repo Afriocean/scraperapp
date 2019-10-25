@@ -15,6 +15,13 @@ body {
     display: flex;
     justify-content: space-around;
 }
+
+#pageHeadInfo:hover {
+    background: blue;
+    font-size: 25px;
+    cursor: pointer;
+}
+
 h1 {
     color: lightcyan;
     font-family: 'Big Shoulders Text', sans-serif;
