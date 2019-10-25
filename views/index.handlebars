@@ -1,0 +1,28 @@
+<section class='topper'>
+    <div class="bigHead">
+        <h1>NY Times Sports</h1>
+        <h3>--Stay connected--</h3>
+    </div>
+
+<div class="navLinks">
+    <ul>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/' id='scrape'>Find new Articles</a></li>
+        <li><a href='/myarticles'>View saved Articles</a></li>
+        <li><a href='/' id='clear'>Clear unsaved Articles</a></li>
+    </ul>
+</div>
+
+</section>
+
+<section class='articleSectionWrapper'>
+    {{#each articles}}
+    <div class='articleContainer'>
+        <img class='articleIMG' src={{this.image}}>
+        <p class="articleCategory">{{this.category}}</p>
+        <p class="articleHead"><a href={{this.link}} target='_blank'><span class='un'>{{this.headline}}</span></a></p>
+        <p class='articleDescription'>{{this.summary}}</p>
+        <button class='addArticle' data-id={{this._id}}>Save Article</button>
+    </div>
+    {{/each}}
+</section>

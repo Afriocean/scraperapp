@@ -1,0 +1,40 @@
+<section class='topper'>
+    <div class="bigHead">
+        <h1 id="pageHead">NY Times Sports</h1>
+        <h3 id="pageHeadInfo">--Saved Articles--</h3>
+    </div>
+
+<div class="navLinks">
+    <ul>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/myarticles' id='clearSaved'>Clear all saved Articles</a></li>
+    </ul>
+</div>
+
+</section>
+
+<section class='articleSectionWrapper'>
+    {{#each articles}}
+    <div class='articleContainer'>
+        <img class='articleIMG' src={{this.image}}>
+        <p class="articleCategory">{{this.category}}</p>
+        <p class="articleHead"><a href={{this.link}} target='_blank'><span class='un'>{{this.headline}}</span></a></p>
+        <p class='articleDescription'>{{this.summary}}</p>
+        <button class='deleteArticle' data-id={{this._id}}>Delete Article</button>
+        <button class='remarkArticle' data-id={{this._id}}>Remark</button>
+    </div>
+    {{/each}}
+</section>
+
+<div id="commentModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Remark on: <span id="modalHeader" class="modalHeader"></span></p>
+    <form id='inputComment'>
+        <input id='body' type='text' placeholder='Type here . . .'></input>
+        <button id='sendComment' class="sendComment">Send</button>
+    </form>
+    <ul id='allComments' class='allComments'>
+    </ul>
+  </div>
+</div>
